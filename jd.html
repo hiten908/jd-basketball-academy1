@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD Basketball Academy</title>
+    <link rel="stylesheet" href="jd.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .slide-in {
+            animation: slideIn 2s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(0); }
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        .banner {
+            position: relative;
+            text-align: center;
+            color: white;
+            background: url('lebron-banner.jpg') no-repeat center center/cover;
+            height: 60vh;
+        }
+
+        .banner .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        /* Contact Section Styles */
+        #contact {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact form label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        #contact form input,
+        #contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #contact form input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Social Media Section */
+        #social-media ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #social-media ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        #social-media ul li a {
+            color: #333;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        #social-media ul li a:hover {
+            color: #007BFF;
+        }
+
+        /* Login Section */
+        #login {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        #login .login-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        #login .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        #login .close:hover,
+        #login .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* LeBron James Animation */
+        .lebron-animation {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: url('lebron-animation.gif') no-repeat center center/cover;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="fade-in">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#coaches">Coaches</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#" onclick="document.getElementById('login').style.display='block'">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Homepage -->
+    <section id="home" class="banner fade-in">
+        <div class="overlay">
+            <h1>Welcome to JD Basketball Academy</h1>
+            <p>"At JD Basketball Academy, we believe in shaping not just athletes, but leaders of tomorrow."</p>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="section slide-in">
+        <h1>About Us</h1>
+        <p>Discover the power of teamwork and skill development at JD Basketball Academy, the home of aspiring basketball stars.</p>
+    </section>
+
+    <!-- Coaches -->
+    <section id="coaches" class="section slide-in">
+        <h1>Our Coaches</h1>
+        <ul class="coaches-list">
+            <li>
+                <img src="rohit1.jfif" alt="Coach Rahul Sohil">
+                <h2>Rahul Sohil</h2>
+                <p>(NIS CERTIFIED - Head Coach)</p>
+            </li>
+            <li>
+                <img src="rohit.jfif" alt="Coach Rohit">
+                <h2>Rohit</h2>
+                <p>(Assistant Coach)</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Location -->
+    <section id="location" class="section slide-in">
+        <h1>Our Location</h1>
+        <div id="map"></div>
+        <p>Mahendra Model School, Sec 3, Rohtak, Haryana</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3493.0060677881434!2d76.63245787479855!3d28.89816777552071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d852e04ae5043%3A0xde553ba196f1ba7c!2sMahendra%20Model%20School!5e0!3m2!1sen!2sin!4v1719504729726!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Social Media -->
+    <section id="social-media" class="section slide-in">
+        <h1>Follow Us</h1>
+        <ul class="social-media-list">
+            <li><a href="https://www.instagram.com/jd_basketball_academy?igsh=NDh1aWpwa3ZuMDhj" class="instagram"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://youtube.com/@jdbasketball_academy?si=HKX6PfEje7uVKyHK" class="youtube"><i class="fa fa-youtube"></i></a></li>
+        </ul>
+    </section>
+
+    <!-- Activities -->
+    <section id="activities" class="section slide-in">
+        <h1>Our Activities</h1>
+        <h2>Dribbling Techniques</h2>
+        <ul class="activities-list">
+            <li>Basic dribble</li>
+            <li>Crossover dribble</li>
+            <li>Behind-the-back dribble</li>
+            <li>Between-the-legs dribble</li>
+            <li>Spin dribble</li>
+            <li>Hesitation dribble</li>
+            <li>Speed dribble</li>
+        </ul>
+        <h2>Drills</h2>
+        <ul class="activities-list">
+            <li>Layup drills</li>
+            <li>Shooting drills</li>
+            <li>Passing drills</li>
+            <li>Dribbling drills</li>
+            <li>Defensive drills</li>
+            <li>Rebounding drills</li>
+            <li>Fast break drills</li>
+        </ul>
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact" class="section slide-in">
+        <h1>Get in Touch</h1>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 JD Basketball Academy. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login">
+        <div class="login-content">
+            <span class="close" onclick="document.getElementById('login').style.display='none'">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"><br><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+
+    <!-- LeBron James Animation -->
+    <div class="ezgif.com-animated-gif-maker.gif"></div>
+
+    <script>
+        // Close the login modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('login')) {
+                document.getElementById('login').style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
